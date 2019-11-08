@@ -1,4 +1,4 @@
-
+"use strict";
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -13,6 +13,25 @@ function calculateQuadraticEquation(){
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
     //return x;
+    let D = b*b - 4 * a * c;
+    let x,
+        x1,
+        x2;
+
+    if (D < 0){
+        x = [];
+    }
+    else if (D == 0){
+        x1 = (- b) / (2 * a);
+        x = [x1];
+    }
+    else{
+        x1 = (- b - Math.sqrt(D)) / (2 * a);
+        x2 = (- b + Math.sqrt(D)) / (2 * a);
+        x = [x1, x2];
+    }
+    
+    return x;
 }
 
 function calculateAverageRating(){
