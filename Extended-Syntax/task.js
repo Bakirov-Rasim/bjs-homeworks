@@ -30,7 +30,6 @@ function getResult(a,b,c){
         x2 = (- b + Math.sqrt(D)) / (2 * a);
         x = [x1, x2];
     }
-    
     return x;
 }
 
@@ -43,6 +42,20 @@ function calculateAverageRating(){
 function getAverageMark(marks){
     // код для задачи №2 писать здесь
     //return averageMark;
+    let sum = 0;
+    if (marks.length <= 5){
+      for (let i = 0; i < marks.length; i++) {
+        sum += marks[i];
+      }
+      averageMark = sum / marks.length;
+  } else {
+      console.log('Учитываюся первые 5 оценок');
+      for (let i = 0; i < 5; i++) {
+        sum += marks[i];    
+      }
+      averageMark = sum / 5;
+  }
+    return averageMark;
 }
 
 function calculateDrinkTask(){
