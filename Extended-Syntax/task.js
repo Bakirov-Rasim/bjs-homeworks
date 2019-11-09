@@ -43,17 +43,19 @@ function getAverageMark(marks){
     // код для задачи №2 писать здесь
     //return averageMark;
     let sum = 0;
+    let averageMark,
+        notice;
     if (marks.length <= 5){
       for (let i = 0; i < marks.length; i++) {
         sum += marks[i];
       }
       averageMark = sum / marks.length;
   } else {
-      console.log('Учитываюся первые 5 оценок');
+      notice = ('Учитываюся первые 5 оценок');
       for (let i = 0; i < 5; i++) {
         sum += marks[i];    
       }
-      averageMark = sum / 5;
+      averageMark = (sum / 5) + ' ' + notice;
   }
     return averageMark;
 }
