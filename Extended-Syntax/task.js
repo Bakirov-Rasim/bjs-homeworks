@@ -30,7 +30,7 @@ function getResult(a,b,c){
         x2 = (- b + Math.sqrt(D)) / (2 * a);
         x = [x1, x2];
     }
-    
+
     return x;
 }
 
@@ -43,6 +43,9 @@ function calculateAverageRating(){
 function getAverageMark(marks){
     // код для задачи №2 писать здесь
     //return averageMark;
+    averageMark = (marks[0] + marks[1] + marks[2]) / 3;
+
+
 }
 
 function calculateDrinkTask(){
