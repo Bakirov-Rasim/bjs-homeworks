@@ -1,4 +1,4 @@
-
+'use strict'
 function getSolutions( a, b, c ) {
 
     let D = b*b - 4 * a * c;
@@ -8,15 +8,13 @@ function getSolutions( a, b, c ) {
 
     if (D === 0){
         x1 = (- b) / (2 * a);
-        x = [x1];
-        obj.roots = x;
+        obj.roots = [x1];
     }
 
     else if (D > 0){
         x1 = (- b - Math.sqrt(D)) / (2 * a);
         x2 = (- b + Math.sqrt(D)) / (2 * a);
-        x = [x1, x2];
-        obj.roots = x;
+        obj.roots = [x1, x2];
     }
     
     obj.D = D;
@@ -43,3 +41,5 @@ function showSolutionsMessage( a, b, c ){
 }
 
 showSolutionsMessage( 20, 5, 1 );
+showSolutionsMessage( 1, 2, 1 );
+showSolutionsMessage( 2, 5, 1 );
