@@ -20,12 +20,12 @@ function getResult(a,b,c){
 
     if (D === 0){
         x1 = (- b) / (2 * a);
-        x = [x1];
+        x.push(x1);
     }
     else if (D > 0){
         x1 = (- b - Math.sqrt(D)) / (2 * a);
         x2 = (- b + Math.sqrt(D)) / (2 * a);
-        x = [x1, x2];
+        x.push(x1, x2);
     }
 
     return x;
@@ -43,19 +43,17 @@ function getAverageMark(marks){
 
     let sum = 0;
     let averageMark;
-    let notice;
 
     if (marks.length > 5){
         marks.splice(5);
-        notice = ('Учитываюся первые 5 оценок');
-    } else {
-        notice = ('');
+        console.log('Учитываюся первые 5 оценок');
     }
+
     for (let i = 0; i < marks.length; i++) {
         sum += marks[i];
     }
-    averageMark = sum / marks.length + ' ' + notice;
-    return averageMark;
+    return(sum / marks.length);
+    
 }
 
 function calculateDrinkTask(){
