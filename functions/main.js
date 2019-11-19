@@ -1,7 +1,3 @@
-let a = 5;
-let b = 2;
-let c = 1;
-let result = getSolutions( a, b, c );
 
 function getSolutions( a, b, c ) {
 
@@ -28,20 +24,22 @@ function getSolutions( a, b, c ) {
 }
 
 function showSolutionsMessage( a, b, c ){
-  console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
-  console.log(`Значение дискриминанта: ${result.D}`);
 
-  if (result.D < 0){
-    console.log('Уравнение не имеет вещественных корней');
-  }
+    let result = getSolutions( a, b, c );
+    console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
+    console.log(`Значение дискриминанта: ${result.D}`);
 
-  else if (result.D === 0) {
-    console.log(`Уравнение имеет один корень X₁ = ${result.roots[0]}`);
-  }
+    if (result.D < 0){
+        console.log('Уравнение не имеет вещественных корней');
+    }
 
-  else {
-    console.log(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
-  }
+    else if (result.D === 0) {
+        console.log(`Уравнение имеет один корень X₁ = ${result.roots[0]}`);
+    }
+
+    else {
+        console.log(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
+    }
 }
 
-showSolutionsMessage( a, b, c );
+showSolutionsMessage( 20, 5, 1 );
