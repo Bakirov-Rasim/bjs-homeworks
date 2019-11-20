@@ -43,3 +43,44 @@ function showSolutionsMessage( a, b, c ){
 showSolutionsMessage( 20, 5, 1 );
 showSolutionsMessage( 1, 2, 1 );
 showSolutionsMessage( 2, 5, 1 );
+
+//Задание 2
+
+let data = {
+  algebra: [2, 5, 4, 4],
+  geometry: [2, 5, 4],
+  russian: [2, 5, 4, 5, 6],
+  physics: [2, 5, 4],
+  music: [2, 5, 4],
+  english: [2, 5, 4],
+  chemistry: [3, 5, 3, 5],
+  fremch: [5, 5, 4],
+  poetry: [5, 5, 4]
+}
+
+function getAverageScore(data) {
+  let sum = 0;
+  let count = 0;
+  let resultObject = {};
+  
+  for (let prop in data) {
+    
+    function propAverage(arr) {
+      let sumProp = 0;
+      for (let i = 0; i < arr.length; i++){
+        sumProp += arr[i];
+      }
+      let resultAverage = sumProp / arr.length;
+      return resultAverage;
+    }
+    
+    resultObject[prop] = propAverage(data[prop]);
+    sum += propAverage(data[prop]);
+    count ++;
+  }
+
+  let avg = sum / count;
+  resultObject['average'] = avg;
+  return resultObject;
+}
+console.log(getAverageScore(data));
