@@ -19,19 +19,12 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     function checkInputData (input, inputName) {
 
         let value = input;
-
          if ( value === '' || isNaN(value)){
-            
             console.log(`Параметр ${inputName} содержит неправильное значение ${value}`);
-
         } 
-
         if (typeof(value) === 'string'){
-
             value  = parseInt(input);
-
         }
-        
         return value;
 
     }
