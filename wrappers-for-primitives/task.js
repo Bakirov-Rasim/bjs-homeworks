@@ -16,6 +16,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
     'use strict';
 
+<<<<<<< HEAD
     function checkInputData (input) {
 
         let value;
@@ -41,12 +42,28 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     }
     
 
+=======
+    function checkInputData (input, inputName) {
+
+        let value = input;
+         if ( value === '' || isNaN(value)){
+            console.log(`Параметр ${inputName} содержит неправильное значение ${value}`);
+        } 
+        if (typeof(value) === 'string'){
+            value  = parseInt(input);
+        }
+        return value;
+
+    }
+    
+>>>>>>> f0089f01ce2cce559356d0521ea826192ca958cd
     function getMonthsOfMorgage(date) {
       
         let dateNow = new Date();
         let futureDate = new Date(date)
         let months = (futureDate.getFullYear() - dateNow.getFullYear()) * 12 - dateNow.getMonth() + futureDate.getMonth();
   
+<<<<<<< HEAD
         return Number(months);
     }
 
@@ -57,23 +74,44 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let returnValue = checkInputData(amount) - checkInputData(contribution);
 
     let p = checkInputData(percent) / 1200;
+=======
+        return months;
+    }
+
+
+    let monthsToPay = checkInputData(getMonthsOfMorgage(date), 'Срок ипотеки')
+    
+
+    let returnValue = checkInputData(amount, 'Общая стоимость') - checkInputData(contribution, 'Начальный взнос');
+
+    let p = checkInputData(percent, 'Процентная ставка') / 1200;
+>>>>>>> f0089f01ce2cce559356d0521ea826192ca958cd
 
     let c = Math.pow((1 + p), monthsToPay);
 
     let monthlyPayment = returnValue * (p + (p / (c - 1)));
 
+<<<<<<< HEAD
     let totalAmount = returnValue + monthlyPayment * monthsToPay;
 
     console.log(typeof(p));
     console.log(typeof(c));
     console.log(typeof(returnValue));
+=======
+    let totalAmount = monthlyPayment * monthsToPay;
+
+    console.log(totalAmount);
+>>>>>>> f0089f01ce2cce559356d0521ea826192ca958cd
 
     return totalAmount;
 
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0089f01ce2cce559356d0521ea826192ca958cd
 function sayHello() {
     let name = window.personName.value;
     let greeting = getGreeting(name);
@@ -84,4 +122,18 @@ function sayHello() {
 function getGreeting(name) {
     // код для задачи №2 писать здесь
     //return greeting;
+
+    let greeting;
+
+
+    if (typeof(name)=== 'string' && name !== '') {
+    greeting = `Привет, мир! Меня зовут ${name}`;
+    
+    } else {
+    
+        greeting = 'Привет, мир! Меня зовут Аноним';
+    
+    }
+ 
+  return greeting;
 }
