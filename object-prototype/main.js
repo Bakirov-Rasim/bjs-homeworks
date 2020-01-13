@@ -22,10 +22,10 @@ function initPrintAnimalSound() {
 
 function getAnimalSound(animal) {
     // код для задачи №1 писать здесь
-    let sound = animal.sound;
     if (typeof(animal) == 'undefined') {
         return 'null';
     } else {
+        let sound = animal.sound;
         return sound;
     }
 
@@ -45,7 +45,7 @@ function getAverageMark(marks) {
     // код для задачи №2 писать здесь
     let sum = 0;
     for (let i = 0; i < marks.length; i++) {
-       sum += Number(marks[i]);
+       sum += parseInt(marks[i]);
    
 }
     let average = sum / marks.length;
